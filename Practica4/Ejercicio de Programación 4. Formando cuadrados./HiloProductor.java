@@ -23,52 +23,57 @@ public class HiloProductor extends Thread{
         }
     }
 
-    private void generarCaracter() throws  InterruptedException{
-        String hex = Integer.toHexString((int)(Math.random()*this.valor1+this.valor2));
-        char caracter = ' ';
-        
+    private int generarIndice(int num) throws  InterruptedException{
+        String hex = Integer.toHexString(num);
+
         switch(hex){
             case "2500":
-                caracter = caracteres[0];
-                break;
+                return 0;
+                
             case "2502":
-                caracter = caracteres[1];
-                break;
+                return 1;
+                
             case "250c":
-                caracter = caracteres[2];
-                break;
+                return 2;
+                
             case "2510":
-                caracter = caracteres[3];
-                break;
+                return 3;
+                
             case "2514":
-                caracter = caracteres[4];
-                break;
+                return 4;
+                
             case "2518":
-                caracter = caracteres[5];
-                break;
+                return 5;
+                
             case "2550":
-                caracter = caracteres[6];
-                break;
+                return 6;
+                
             case "2551":
-                caracter = caracteres[7];
-                break;
+                return 7;
+                
             case "2554":
-                caracter = caracteres[8];
-                break;
+                return 8;
+                
             case "2557":
-                caracter = caracteres[9];
-                break;
+                return 9;
+                
             case "255D":
-                caracter = caracteres[10];
-                break;
+                return 10;
+                
             case "255A":
-                caracter = caracteres[11];
-                break;
-            default:
-                caracter = ' ';
-                break;
+                return 11;
+                
         }
-        
-        this.idPizarra.ingresarCaracter(caracter);
+
+        return -1;
+    }
+
+    public void generarCaracter() throws InterruptedException{
+        int inicio = generarIndice(valor1);
+        int fin = generarIndice(valor2);
+
+        int indexchar = (int)(Math.random()*inicio+fin);
+
+        this.idPizarra.ingresarCaracter(caracteres[indexchar]);
     }
 }
