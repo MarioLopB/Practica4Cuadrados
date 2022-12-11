@@ -43,8 +43,8 @@ public class Pizarra{
                 case '\u2551':
                 case '\u2554':
                 case '\u2557':
-                case '\u255D':
-                case '\u255A':
+                case '\u255d':
+                case '\u255a':
                     caracteres.remove(i);
                     find = true;
                     break;

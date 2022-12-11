@@ -11,11 +11,11 @@ public class HiloCuadradoDoble implements Runnable{
     public void run(){
         try{
             do{
-                if(!isPizarraEmpty()){
-                    añadirPieza(consultarPizarra());
+                if(!this.isPizarraEmpty()){
+                    this.añadirPieza(consultarPizarra());
                 }
-                if(hasCuadrado()){
-                    imprimeCuadrado();
+                if(this.hasCuadrado()){
+                    this.imprimeCuadrado();
                     Main.finalizar = true;
                 }
             } while (!Main.finalizar);
