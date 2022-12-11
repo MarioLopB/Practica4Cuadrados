@@ -18,6 +18,7 @@ public class HiloCuadradoSimple implements Runnable{
                 }
                 if(hasCuadrado()){
                     imprimeCuadrado();
+                    Main.finalizar = true;
                 }
             } while (true);
         } catch(InterruptedException e){

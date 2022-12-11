@@ -10,6 +10,7 @@ public class HiloProductor extends Thread{
     public HiloProductor(int valor1, int valor2, Pizarra hiloPizarra){
         this.valor1 = valor1;
         this.valor2 = valor2;
+        this.idPizarra = hiloPizarra;
     }
 
     public void run(){
@@ -17,7 +18,7 @@ public class HiloProductor extends Thread{
             do {
                 generarCaracter();
                 Thread.sleep(1);
-            } while (true);
+            } while (!Main.finalizar);
         } catch(InterruptedException e){
         }
     }
