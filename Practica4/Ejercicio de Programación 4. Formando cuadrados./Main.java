@@ -16,12 +16,12 @@ public class Main {
 			prods[i].start();
 		}
 
-		// int numHilosCuadradosSimples = sc.nextInt();
-		// Thread[] cuadSimples = new Thread[numHilosCuadradosSimples];
-		// for (int i=0; i < numHilosCuadradosSimples; i++) {
-		// 	cuadSimples[i] = new Thread(new HiloCuadradoSimple(i, pizarra));
-		// 	cuadSimples[i].start();
-		// }
+		int numHilosCuadradosSimples = sc.nextInt();
+		Thread[] cuadSimples = new Thread[numHilosCuadradosSimples];
+		for (int i=0; i < numHilosCuadradosSimples; i++) {
+			cuadSimples[i] = new Thread(new HiloCuadradoSimple(i, pizarra));
+			cuadSimples[i].start();
+		}
 
 		int numHilosCuadradosDobles = sc.nextInt();
 		Thread[] cuadDobles = new Thread[numHilosCuadradosDobles];
@@ -45,12 +45,12 @@ public class Main {
 			prods[i].join();
 		}
 		
-		// for (int i=0; i < numHilosCuadradosSimples; i++) {
-		// 	cuadSimples[i].interrupt();
-		// }
-		// for (int i=0; i < numHilosCuadradosSimples; i++) {
-		// 	cuadSimples[i].join();
-		// }
+		for (int i=0; i < numHilosCuadradosSimples; i++) {
+			cuadSimples[i].interrupt();
+		}
+		for (int i=0; i < numHilosCuadradosSimples; i++) {
+			cuadSimples[i].join();
+		}
 		
 		for (int i=0; i < numHilosCuadradosDobles; i++) {
 			cuadDobles[i].interrupt();

@@ -1,6 +1,7 @@
 public class HiloCuadradoSimple implements Runnable{
     private int idCuadrado;
     private Pizarra idPizarra;
+    public static boolean canprint = true;
     private char[] cuadrado = {' ', ' ', ' ', ' ', ' ', ' '};
 
     public HiloCuadradoSimple(int i, Pizarra hiloPizarra){
@@ -15,6 +16,9 @@ public class HiloCuadradoSimple implements Runnable{
                     this.añadirPieza(consultarPizarra());
                 }
                 if(this.hasCuadrado()){
+                    while(!HiloCuadradoDoble.canprint){
+                        wait();
+                    }
                     this.imprimeCuadrado();
                     Main.finalizar = true;
                 }
