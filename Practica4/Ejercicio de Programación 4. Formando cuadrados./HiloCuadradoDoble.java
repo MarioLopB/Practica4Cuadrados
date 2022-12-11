@@ -16,10 +16,13 @@ public class HiloCuadradoDoble implements Runnable{
                     this.añadirPieza(consultarPizarra());
                 }
                 if(this.hasCuadrado()){
-                    while(!HiloCuadradoSimple.canprint){
+                    while(!canprint){
                         wait();
                     }
+                    HiloCuadradoSimple.canprint = false;
                     this.imprimeCuadrado();
+                    HiloCuadradoSimple.canprint = true;
+                    notifyAll();
                     Main.finalizar = true;
                 }
             } while (!Main.finalizar);
