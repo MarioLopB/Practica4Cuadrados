@@ -46,7 +46,7 @@ public class HiloCuadradoSimple implements Runnable{
 
         if(!exist){
             switch(pieza){
-                case '\u2550':
+                case '\u250c':
                     cuadrado[0] = pieza;
                     break;
                 case '\u2500':
