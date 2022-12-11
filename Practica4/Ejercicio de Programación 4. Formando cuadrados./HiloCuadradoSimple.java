@@ -13,20 +13,20 @@ public class HiloCuadradoSimple implements Runnable{
     public void run(){
         try{
             do{
-                if(!isPizzaraEmpty()){
+                if(!isPizarraEmpty()){
                     añadirPieza(consultarPizarra());
                 }
                 if(hasCuadrado()){
                     imprimeCuadrado();
                     Main.finalizar = true;
                 }
-            } while (true);
+            } while (!Main.finalizar);
         } catch(InterruptedException e){
             System.out.println("Cuadrado a terminado");
         }
     }
 
-    public boolean isPizzaraEmpty() throws InterruptedException{
+    public boolean isPizarraEmpty() throws InterruptedException{
         return this.idPizarra.caracteres.isEmpty();
     }
 
@@ -82,8 +82,8 @@ public class HiloCuadradoSimple implements Runnable{
     }
 
     public void imprimeCuadrado() throws InterruptedException{
-        System.out.println(cuadrado[0] + cuadrado[1] + cuadrado[2]);
-        System.out.println(cuadrado[3] + idCuadrado + cuadrado[3]);
-        System.out.println(cuadrado[4] + cuadrado[1] + cuadrado[5]);
+        System.out.println(""+ cuadrado[0] + cuadrado[1] + cuadrado[2]);
+        System.out.println(""+ cuadrado[3] + idCuadrado + cuadrado[3]);
+        System.out.println(""+ cuadrado[4] + cuadrado[1] + cuadrado[5]);
     }
 }

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Pizarra{
     public ArrayList<Character> caracteres = new ArrayList<Character>();
 
-    public void ingresarCaracter(char caracter) {
+    public synchronized void ingresarCaracter(char caracter) {
         if(caracter != ' '){
             this.caracteres.add(caracter);
         }
@@ -43,8 +43,8 @@ public class Pizarra{
                 case '\u2551':
                 case '\u2554':
                 case '\u2557':
-                case '\u255d':
-                case '\u255a':
+                case '\u255D':
+                case '\u255A':
                     caracteres.remove(i);
                     find = true;
                     break;
