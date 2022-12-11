@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class HiloCuadradoSimple implements Runnable{
     private int idCuadrado;
     private Pizarra idPizarra;

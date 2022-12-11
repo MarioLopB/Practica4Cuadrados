@@ -72,7 +72,7 @@ public class HiloProductor extends Thread{
         int inicio = generarIndice(valor1);
         int fin = generarIndice(valor2);
 
-        int indexchar = (int)(Math.random()*inicio+fin);
+        int indexchar = (int)(Math.random()*(fin-inicio+1)+inicio);
 
         this.idPizarra.ingresarCaracter(caracteres[indexchar]);
     }
