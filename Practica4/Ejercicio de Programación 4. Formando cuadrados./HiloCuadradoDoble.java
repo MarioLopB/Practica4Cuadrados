@@ -56,10 +56,10 @@ public class HiloCuadradoDoble implements Runnable{
                 case '\u2551':
                     cuadrado[3] = pieza;
                     break;
-                case '\u255A':
+                case '\u255a':
                     cuadrado[4] = pieza;
                     break;
-                case '\u255D':
+                case '\u255d':
                     cuadrado[5] = pieza;
                     break;
             }

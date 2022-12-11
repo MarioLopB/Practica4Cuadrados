@@ -5,7 +5,7 @@ public class HiloProductor extends Thread{
     private int valor1, valor2;
     private Pizarra idPizarra;
     private char[] caracteres = {'\u2500', '\u2502', '\u250c', '\u2510', '\u2514',
-     '\u2518', '\u2550', '\u2551', '\u2554', '\u2557', '\u255D', '\u255A'};
+     '\u2518', '\u2550', '\u2551', '\u2554', '\u2557', '\u255d', '\u255a'};
 
     public HiloProductor(int valor1, int valor2, Pizarra hiloPizarra){
         this.valor1 = valor1;
@@ -57,10 +57,10 @@ public class HiloProductor extends Thread{
             case "2557":
                 return 9;
                 
-            case "255D":
+            case "255d":
                 return 10;
                 
-            case "255A":
+            case "255a":
                 return 11;
                 
         }
