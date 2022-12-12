@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Pizarra{
     public ArrayList<Character> caracteres = new ArrayList<Character>();
+    public boolean canprint = true;
 
     public synchronized void ingresarCaracter(char caracter) {
         if(caracter != ' '){
@@ -52,5 +53,11 @@ public class Pizarra{
         }
 
         return caracter;
+    }
+
+    public synchronized void imprimeCuadrado(char[] cuadrado, int idCuadrado) throws InterruptedException{
+        System.out.println(""+ cuadrado[0] + cuadrado[1] + cuadrado[2]);
+        System.out.println(""+ cuadrado[3] + idCuadrado + cuadrado[3]);
+        System.out.println(""+ cuadrado[4] + cuadrado[1] + cuadrado[5]);
     }
 }

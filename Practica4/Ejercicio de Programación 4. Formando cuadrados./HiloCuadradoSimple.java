@@ -1,7 +1,6 @@
 public class HiloCuadradoSimple implements Runnable{
     private int idCuadrado;
     private Pizarra idPizarra;
-    public static boolean canprint = true;
     private char[] cuadrado = {' ', ' ', ' ', ' ', ' ', ' '};
 
     public HiloCuadradoSimple(int i, Pizarra hiloPizarra){
@@ -16,13 +15,7 @@ public class HiloCuadradoSimple implements Runnable{
                     this.añadirPieza(consultarPizarra());
                 }
                 if(this.hasCuadrado()){
-                    while(!canprint){
-                        wait();
-                    }
-                    HiloCuadradoDoble.canprint = false;
                     this.imprimeCuadrado();
-                    HiloCuadradoDoble.canprint = true;
-                    notifyAll();
                     Main.finalizar = true;
                 }
             } while (!Main.finalizar);
@@ -87,8 +80,6 @@ public class HiloCuadradoSimple implements Runnable{
     }
 
     public void imprimeCuadrado() throws InterruptedException{
-        System.out.println(""+ cuadrado[0] + cuadrado[1] + cuadrado[2]);
-        System.out.println(""+ cuadrado[3] + idCuadrado + cuadrado[3]);
-        System.out.println(""+ cuadrado[4] + cuadrado[1] + cuadrado[5]);
+        idPizarra.imprimeCuadrado(cuadrado, idCuadrado);
     }
 }

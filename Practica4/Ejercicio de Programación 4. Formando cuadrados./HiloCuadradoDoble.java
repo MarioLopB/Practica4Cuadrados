@@ -16,13 +16,7 @@ public class HiloCuadradoDoble implements Runnable{
                     this.añadirPieza(consultarPizarra());
                 }
                 if(this.hasCuadrado()){
-                    while(!canprint){
-                        wait();
-                    }
-                    HiloCuadradoSimple.canprint = false;
                     this.imprimeCuadrado();
-                    HiloCuadradoSimple.canprint = true;
-                    notifyAll();
                     Main.finalizar = true;
                 }
             } while (!Main.finalizar);
@@ -87,8 +81,6 @@ public class HiloCuadradoDoble implements Runnable{
     }
 
     public void imprimeCuadrado() throws InterruptedException{
-        System.out.println(""+ cuadrado[0] + cuadrado[1] + cuadrado[2]);
-        System.out.println(""+ cuadrado[3] + idCuadrado + cuadrado[3]);
-        System.out.println(""+ cuadrado[4] + cuadrado[1] + cuadrado[5]);
+        idPizarra.imprimeCuadrado(cuadrado, idCuadrado);
     }
 }
